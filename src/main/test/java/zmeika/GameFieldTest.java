@@ -1,0 +1,91 @@
+package zmeika;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.KeyAdapter;
+
+public class GameFieldTest extends KeyAdapter {
+    private boolean berry1;
+    private boolean berry2;
+    private boolean berry3;
+    private boolean flag1;
+    private Image t;
+    GameField GF = new GameField();
+
+    @Test
+    public void initGame() {
+        Assert.assertEquals(80,GF.initGame());
+    }
+
+    @Test
+    public void berr1T(){
+        Assert.assertTrue(GF.berry1(1,2,1,2));
+    }
+
+    @Test
+    public void berr1F(){
+        Assert.assertFalse(GF.berry1(0,1,1,2));
+    }
+
+    @Test
+    public void createBerry1() {
+        if ((GF.createBerry1() < 321) && (GF.createBerry1() > -1)){
+            berry1 = true;
+        }
+        Assert.assertTrue(berry1);
+    }
+
+    @Test
+    public void berr2T(){
+        Assert.assertTrue(GF.berry2(1,2,1,2));
+    }
+
+    @Test
+    public void berr2F(){
+        Assert.assertFalse(GF.berry2(0,1,1,2));
+    }
+
+    @Test
+    public void createBerry2() {
+        if ((GF.createBerry2() < 321) && (GF.createBerry2() > -1)){
+            berry2 = true;
+        }
+        Assert.assertTrue(berry2);
+    }
+
+    @Test
+    public void berr3T(){
+        Assert.assertTrue(GF.berry3(1,2,1,2));
+    }
+
+    @Test
+    public void berr3F(){
+        Assert.assertFalse(GF.berry3(0,1,1,2));
+    }
+
+    @Test
+    public void createBerry3() {
+        if ((GF.createBerry3() < 321) && (GF.createBerry3() > -1)){
+            berry3 = true;
+        }
+        Assert.assertTrue(berry3);
+    }
+
+    @Test
+    public void loadImages() {
+        ImageIcon test = new ImageIcon("classes\\dot.png");
+        t = test.getImage();
+        if (GF.loadImages() == t){
+            flag1 = true;
+        }
+        Assert.assertTrue(flag1);
+    }
+
+    @Test
+    public void paintComponent() {
+
+    }
+}
