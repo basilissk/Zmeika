@@ -7,6 +7,5 @@ public class GameWindow extends JFrame {
         setTitle("Игровое поле");
         setSize(352, 447);
         setLocation(300, 200);
-        add(new GameField());
     }
 }
