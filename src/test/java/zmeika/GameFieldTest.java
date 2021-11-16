@@ -108,4 +108,55 @@ public class GameFieldTest extends KeyAdapter {
     public void timer4() {
         Assert.assertEquals(0,GF.Timer(0,0,0));
     }
+    @Test
+    public void move(){
+        Assert.assertEquals(5, GF.move(5,4,1));
+    }
+
+    @Test
+    public void left() {
+        Assert.assertEquals(80,GF.horizontal(true,false));
+    }
+
+    @Test
+    public void right() {
+        Assert.assertEquals(112,GF.horizontal(false,true));
+    }
+
+    @Test
+    public void up() {
+        Assert.assertEquals(32,GF.vertical(true,false));
+    }
+
+    @Test
+    public void down() {
+        Assert.assertEquals(64,GF.vertical(false,true));
+    }
+
+    @Test
+    public void checkBerry1T() {
+        Assert.assertTrue(GF.checkBerry1(1,1,1,1));
+    }
+    @Test
+    public void checkBerry1F() {
+        Assert.assertFalse(GF.checkBerry1(0,1,1,1));
+    }
+
+    @Test
+    public void checkBerry2T() {
+        Assert.assertTrue(GF.checkBerry2(1,1,1,1));
+    }
+    @Test
+    public void checkBerry2F() {
+        Assert.assertFalse(GF.checkBerry2(1,1,1,0));
+    }
+    @Test
+    public void checkBerry3T() {
+        Assert.assertTrue(GF.checkBerry3(1,1,1,1));
+    }
+    
+    @Test
+    public void checkBerry3F() {
+        Assert.assertFalse(GF.checkBerry3(0,1,1,0));
+    }
 }
