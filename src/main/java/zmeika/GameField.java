@@ -3,7 +3,7 @@ package zmeika;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.ActionListener;;
 import java.util.Random;
 
 import static java.lang.Math.abs;
@@ -194,8 +194,54 @@ public class GameField extends JPanel implements ActionListener {
         }
     }
 
+    // Таймер, оставшегося времени
+    public int Timer(int n1,int min,int sec) {
+        if (n1 > 4) {
+            n1 = 1;
+            if (sec == 0) {
+                min = min - 1;
+                sec = 60;
+            }
+            sec--;
+            if ((min == 0) && (sec == 0)) {
+                inGame = false;
+            }
+            n = n1;
+            minutes = min;
+            seconds = sec;
+        }
+        return(min);
+    }
+
+    // Проверка столкновений
+    public void checkCollisions(){
+        for (int i = dots-1; i >0 ; i--) {
+            if(i>4 && x[0] == x[i] && y[0] == y[i]){
+                inGame = false;
+            }
+        }
+
+        if(x[0]>SIZE){
+            inGame = false;
+        }
+        if(x[0]<0){
+            inGame = false;
+        }
+        if(y[0]>SIZE){
+            inGame = false;
+        }
+        if(y[0]<0){
+            inGame = false;
+        }
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(inGame){
+            checkCollisions();
+            n++;
+            Timer(n,minutes,seconds);
+        }
         repaint();
     }
 }
