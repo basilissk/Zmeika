@@ -3,7 +3,9 @@ package zmeika;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.Random;
 
 import static java.lang.Math.abs;
@@ -50,6 +52,7 @@ public class GameField extends JPanel implements ActionListener {
         loadImages();
         initGame();
         timer();
+        addKeyListener(new FieldKeyListener());
         setFocusable(true);
     }
 
@@ -213,6 +216,67 @@ public class GameField extends JPanel implements ActionListener {
         return(min);
     }
 
+    // Перемещение змейки
+    public int move(int PredX, int PredY,int i) {
+            x[i] = PredX;
+            y[i] = PredY;
+            return(x[i]);
+    }
+
+    // Изменнение положения змейки по горизонтали
+    public int horizontal(boolean left, boolean right) {
+        if (left) {
+            x[0] -= DOT_SIZE;
+        }
+        if (right) {
+            x[0] += DOT_SIZE;
+        }
+        return(x[0]);
+    }
+
+    // Изменнение положения змейки по вертикали
+    public int vertical(boolean up, boolean down){
+        if(up){
+            y[0] -= DOT_SIZE;
+        } if(down){
+            y[0] += DOT_SIZE;
+        }
+        return(y[0]);
+    }
+
+    // Проверка поедания ягоды
+    public boolean checkBerry1(int X, int Y,int berryX1,int berryY1) {
+        if (X == berryX1 && Y == berryY1) {
+            dots = dots + 1;
+            number = number + 1;
+            createBerry1();
+            return(true);
+        }
+        return false;
+    }
+
+    // Проверка поедания ягоды
+    public boolean checkBerry2(int X,int Y,int berryX2,int berryY2) {
+        if (X == berryX2 && Y == berryY2) {
+            dots = dots + 2;
+            number = number + 2;
+            createBerry2();
+            return(true);
+        }
+        return false;
+    }
+
+    // Проверка поедания ягоды
+    public boolean checkBerry3(int X, int Y, int berryX3,int berryY3) {
+        if(X == berryX3 && Y == berryY3){
+            dots = dots +3;
+            number = number + 3;
+            createBerry3();
+            return(true);
+        }
+        return false;
+    }
+
     // Проверка столкновений
     public void checkCollisions(){
         for (int i = dots-1; i >0 ; i--) {
@@ -238,10 +302,48 @@ public class GameField extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(inGame){
+            checkBerry1(x[0],y[0],berryX1,berryY1);
+            checkBerry2(x[0],y[0],berryX2,berryY2);
+            checkBerry3(x[0],y[0],berryX3,berryY3);
             checkCollisions();
+            for (int i = dots + 2; i > 0; i--) {
+                move(x[i-1],y[i-1],i);
+            }
+            horizontal(left, right);
+            vertical(up, down);
             n++;
             Timer(n,minutes,seconds);
         }
         repaint();
+    }
+
+    // Клавиши управленния
+    class FieldKeyListener extends KeyAdapter{
+        @Override
+        public void keyPressed(KeyEvent e) {
+            super.keyPressed(e);
+            int key = e.getKeyCode();
+            if(key == KeyEvent.VK_LEFT && !right){
+                left = true;
+                up = false;
+                down = false;
+            }
+            if(key == KeyEvent.VK_RIGHT && !left){
+                right = true;
+                up = false;
+                down = false;
+            }
+
+            if(key == KeyEvent.VK_UP && !down){
+                right = false;
+                up = true;
+                left = false;
+            }
+            if(key == KeyEvent.VK_DOWN && !up){
+                right = false;
+                down = true;
+                left = false;
+            }
+        }
     }
 }
