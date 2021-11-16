@@ -88,4 +88,24 @@ public class GameFieldTest extends KeyAdapter {
     public void paintComponent() {
 
     }
+    
+    @Test
+    public void timer1() {
+        Assert.assertEquals(3,GF.Timer(1,3,1));
+    }
+
+    @Test
+    public void timer2() {
+        Assert.assertEquals(3,GF.Timer(5,3,10));
+    }
+
+    @Test
+    public void timer3() {
+        Assert.assertEquals(2,GF.Timer(5,3,0));
+    }
+
+    @Test
+    public void timer4() {
+        Assert.assertEquals(0,GF.Timer(0,0,0));
+    }
 }
