@@ -3,11 +3,10 @@ package zmeika;
 import org.junit.Test;
 
 public class TutorialWindowTest {
-    private boolean flag;
+    TutorialWindow TW = new TutorialWindow();
 
     @Test
     public void Window(){
-        TutorialWindow TW = new TutorialWindow();
     }
 
 }
