@@ -105,7 +105,7 @@ public class GameField extends JPanel implements ActionListener {
     // Проверка появленния ягоды в змейке
     public boolean berry2(int x, int y,int berryX2,int berryY2){
         if (berryX2 == x && berryY2 == y) {
-            createBerry1();
+            createBerry2();
             return true;
         }
         return false;
@@ -130,7 +130,7 @@ public class GameField extends JPanel implements ActionListener {
     // Проверка появленния ягоды в змейке
     public boolean berry3(int x, int y,int berryX3,int berryY3){
         if (berryX3 == x && berryY3 == y) {
-            createBerry1();
+            createBerry3();
             return true;
         }
         return false;
