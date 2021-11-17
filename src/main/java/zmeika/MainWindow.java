@@ -52,6 +52,7 @@ public class MainWindow extends JFrame {
     }
 
     public static void main(String[] args) {
-        MainWindow MW = new MainWindow();
+       Test T = new Test();
+       T.window();
     }
 }
