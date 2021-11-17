@@ -16,7 +16,7 @@ public class GameFieldTest extends KeyAdapter {
     GameField GF = new GameField();
 
     @Test
-    public void initGame() {
+    public void initGame(){
         Assert.assertEquals(80,GF.initGame());
     }
 
