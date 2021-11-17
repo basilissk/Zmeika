@@ -9,7 +9,7 @@ public class TutorialWindowTest {
 
     @Test
     public void Window(){
-        if (TW != null ){
+        if (TW == null ){
             flag = true;
         }
         Assert.assertTrue(flag);
