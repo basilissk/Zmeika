@@ -5,11 +5,11 @@ import org.junit.Test;
 
 public class TutorialWindowTest {
     private boolean flag;
-    TutorialWindow TW = new TutorialWindow();
+    zmeika.TutorialWindow TW = new zmeika.TutorialWindow();
 
     @Test
     public void Window(){
-        if (TW == null ){
+        if (TW != null ){
             flag = true;
         }
         Assert.assertTrue(flag);
