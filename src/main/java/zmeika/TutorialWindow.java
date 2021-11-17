@@ -11,6 +11,5 @@ public class TutorialWindow extends JFrame {
         setBackground(Color.black);
         add(new Tutorial());
         setVisible(true);
-
     }
 }
