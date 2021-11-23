@@ -158,4 +158,19 @@ public class GameFieldTest extends JPanel {
     public void checkBerry3F() {
         Assert.assertFalse(GF.checkBerry3(0,1,1,0));
     }
+
+    @Test
+    public void mainWindow1() {
+        Assert.assertEquals(631, GF.MainWindow1(1));
+    }
+
+    @Test
+    public void mainWindow2() {
+        Assert.assertEquals(631, GF.MainWindow2(1));
+    }
+
+    @Test
+    public void mainWindow3() {
+        Assert.assertEquals(631, GF.MainWindow3(1));
+    }
 }

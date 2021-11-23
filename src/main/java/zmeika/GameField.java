@@ -46,13 +46,15 @@ public class GameField extends JPanel implements ActionListener {
     private String Number;
     private String Minutes;
     private String Seconds;
+    private int y1;
+    private int y2;
+    private int y3;
 
     public GameField() {
         setBackground(Color.black);
         loadImages();
         initGame();
         timer();
-        addKeyListener(new FieldKeyListener());
         setFocusable(true);
     }
 
@@ -166,35 +168,44 @@ public class GameField extends JPanel implements ActionListener {
     }
 
     // Отрисовка объектов
-    @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        g.setColor(Color.white);
-        g.drawLine(0, 352, 352, 352);
-        Font font = new Font("Serif", Font.ITALIC, 50);
-        g.setFont(font);
-        Number = String.valueOf(number * 100);
-        g.drawString(Number, 10, 402);
-        Minutes = String.valueOf(minutes);
-        Seconds = String.valueOf(seconds);
-        if (seconds < 10) {
-            Timer = Minutes + ".0" + Seconds;
-        } else {
-            Timer = Minutes + "." + Seconds;
-        }
-        g.drawString(Timer, 230, 402);
-        if (inGame) {
-            g.drawImage(berry1, berryX1, berryY1, this);
-            g.drawImage(berry2, berryX2, berryY2, this);
-            g.drawImage(berry3, berryX3, berryY3, this);
-            for (int i = 0; i < dots; i++) {
-                g.drawImage(dot, x[i], y[i], this);
-            }
-        } else {
-            String str = "Game Over";
-            g.setColor(Color.white);
-            g.drawString(str, 50, SIZE / 2);
-        }
+    public int MainWindow2(int x){
+        x=x+1;
+        x=x+2;
+        x=x+3;
+        x=x+4;
+        x=x+5;
+        x=x+6;
+        x=x+7;
+        x=x+8;
+        x=x+9;
+        x=x+10;
+        x=x+11;
+        x=x+12;
+        x=x+13;
+        x=x+14;
+        x=x+15;
+        x=x+16;
+        x=x+17;
+        x=x+18;
+        x=x+19;
+        x=x+20;
+        x=x+21;
+        x=x+22;
+        x=x+23;
+        x=x+24;
+        x=x+25;
+        x=x+26;
+        x=x+27;
+        x=x+28;
+        x=x+29;
+        x=x+30;
+        x=x+31;
+        x=x+32;
+        x=x+33;
+        x=x+34;
+        x=x+35;
+        y2=x;
+        return y2;
     }
 
     // Таймер, оставшегося времени
@@ -278,25 +289,44 @@ public class GameField extends JPanel implements ActionListener {
     }
 
     // Проверка столкновений
-    public void checkCollisions(){
-        for (int i = dots-1; i >0 ; i--) {
-            if(i>4 && x[0] == x[i] && y[0] == y[i]){
-                inGame = false;
-            }
-        }
-
-        if(x[0]>SIZE){
-            inGame = false;
-        }
-        if(x[0]<0){
-            inGame = false;
-        }
-        if(y[0]>SIZE){
-            inGame = false;
-        }
-        if(y[0]<0){
-            inGame = false;
-        }
+    public int MainWindow3(int x){
+        x=x+1;
+        x=x+2;
+        x=x+3;
+        x=x+4;
+        x=x+5;
+        x=x+6;
+        x=x+7;
+        x=x+8;
+        x=x+9;
+        x=x+10;
+        x=x+11;
+        x=x+12;
+        x=x+13;
+        x=x+14;
+        x=x+15;
+        x=x+16;
+        x=x+17;
+        x=x+18;
+        x=x+19;
+        x=x+20;
+        x=x+21;
+        x=x+22;
+        x=x+23;
+        x=x+24;
+        x=x+25;
+        x=x+26;
+        x=x+27;
+        x=x+28;
+        x=x+29;
+        x=x+30;
+        x=x+31;
+        x=x+32;
+        x=x+33;
+        x=x+34;
+        x=x+35;
+        y3=x;
+        return y3;
     }
 
     @Override
@@ -305,7 +335,6 @@ public class GameField extends JPanel implements ActionListener {
             checkBerry1(x[0],y[0],berryX1,berryY1);
             checkBerry2(x[0],y[0],berryX2,berryY2);
             checkBerry3(x[0],y[0],berryX3,berryY3);
-            checkCollisions();
             for (int i = dots + 2; i > 0; i--) {
                 move(x[i-1],y[i-1],i);
             }
@@ -318,32 +347,43 @@ public class GameField extends JPanel implements ActionListener {
     }
 
     // Клавиши управленния
-    class FieldKeyListener extends KeyAdapter{
-        @Override
-        public void keyPressed(KeyEvent e) {
-            super.keyPressed(e);
-            int key = e.getKeyCode();
-            if(key == KeyEvent.VK_LEFT && !right){
-                left = true;
-                up = false;
-                down = false;
-            }
-            if(key == KeyEvent.VK_RIGHT && !left){
-                right = true;
-                up = false;
-                down = false;
-            }
-
-            if(key == KeyEvent.VK_UP && !down){
-                right = false;
-                up = true;
-                left = false;
-            }
-            if(key == KeyEvent.VK_DOWN && !up){
-                right = false;
-                down = true;
-                left = false;
-            }
-        }
+    public int MainWindow1(int x){
+        x=x+1;
+        x=x+2;
+        x=x+3;
+        x=x+4;
+        x=x+5;
+        x=x+6;
+        x=x+7;
+        x=x+8;
+        x=x+9;
+        x=x+10;
+        x=x+11;
+        x=x+12;
+        x=x+13;
+        x=x+14;
+        x=x+15;
+        x=x+16;
+        x=x+17;
+        x=x+18;
+        x=x+19;
+        x=x+20;
+        x=x+21;
+        x=x+22;
+        x=x+23;
+        x=x+24;
+        x=x+25;
+        x=x+26;
+        x=x+27;
+        x=x+28;
+        x=x+29;
+        x=x+30;
+        x=x+31;
+        x=x+32;
+        x=x+33;
+        x=x+34;
+        x=x+35;
+        y1=x;
+        return y1;
     }
 }
