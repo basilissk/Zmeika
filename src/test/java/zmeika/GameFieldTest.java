@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 
-public class GameFieldTest extends KeyAdapter {
+public class GameFieldTest extends JPanel {
     private boolean berry1;
     private boolean berry2;
     private boolean berry3;
@@ -86,7 +86,6 @@ public class GameFieldTest extends KeyAdapter {
 
     @Test
     public void paintComponent() {
-
     }
     
     @Test

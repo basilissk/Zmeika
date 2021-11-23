@@ -4,55 +4,56 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MainWindow extends JFrame {
+public class MainWindow  {
     private JButton start;
     private JButton tutorial;
     private JButton exit;
     private JPanel panel;
     private GameWindow GW;
     private TutorialWindow TW;
-    public MainWindow(){
-        setTitle("Главное меню");
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setSize(150, 150);
-        setLocation(700, 200);
-        GW = new GameWindow();
-        GW.setVisible(false);
-        panel = new JPanel();
-        start = new JButton("Начать игру");
-        tutorial = new JButton("Обучение");
-        exit = new JButton("Выход");
-
-        // Нажатие кнопок
-        start.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                GW.dispose();
-                GW = new GameWindow();
-                GW.setVisible(true);
-            }
-        });
-        tutorial.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                TW = new TutorialWindow();
-            }
-        });
-        exit.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
-        panel.add(start);
-        panel.add(tutorial);
-        panel.add(exit);
-        add(panel);
-        setVisible(true);
+    private int y;
+    public int MainWindow(int x){
+        x=x+1;
+        x=x+2;
+        x=x+3;
+        x=x+4;
+        x=x+5;
+        x=x+6;
+        x=x+7;
+        x=x+8;
+        x=x+9;
+        x=x+10;
+        x=x+11;
+        x=x+12;
+        x=x+13;
+        x=x+14;
+        x=x+15;
+        x=x+16;
+        x=x+17;
+        x=x+18;
+        x=x+19;
+        x=x+20;
+        x=x+21;
+        x=x+22;
+        x=x+23;
+        x=x+24;
+        x=x+25;
+        x=x+26;
+        x=x+27;
+        x=x+28;
+        x=x+29;
+        x=x+30;
+        x=x+31;
+        x=x+32;
+        x=x+33;
+        x=x+34;
+        x=x+35;
+        y=x;
+        return y;
     }
 
+
     public static void main(String[] args) {
-       Test T = new Test();
-       T.window();
+        MainWindow MW = new MainWindow();
     }
 }

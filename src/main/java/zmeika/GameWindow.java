@@ -2,11 +2,11 @@ package zmeika;
 
 import javax.swing.*;
 
-public class GameWindow extends JFrame {
-    public GameWindow() {
-        setTitle("Игровое поле");
-        setSize(352, 447);
-        setLocation(300, 200);
-        add(new GameField());
+public class GameWindow {
+    private int y;
+    public int GameWindow(int x) {
+        x=x+2;
+        y=x+1;
+        return y;
     }
 }
