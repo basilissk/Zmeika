@@ -1,7 +1,9 @@
 package zmeika;
 
-public class 1{
-    public int 1(int x){
+public class A{
+    private int x;
+    private int y;
+    public int A(int x){
         x=x+1;
         x=x+2;
         x=x+3;
@@ -37,8 +39,8 @@ public class 1{
         x=x+33;
         x=x+34;
         x=x+35;
-        y2=x;
-        return y2;
+        y=x;
+        return y;
     }
       public int 2(int x){
         x=x+1;
@@ -76,7 +78,7 @@ public class 1{
         x=x+33;
         x=x+34;
         x=x+35;
-        y2=x;
-        return y2;
+        y=x;
+        return y;
     }
 }
