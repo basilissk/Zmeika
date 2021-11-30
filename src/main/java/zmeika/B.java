@@ -81,7 +81,7 @@ public class B{
         y=x;
         return y;
     }
-    public int BA(int x){
+    public int BC(int x){
         x=x+1;
         x=x+2;
         x=x+3;
@@ -120,7 +120,7 @@ public class B{
         y=x;
         return y;
     }
-      public int BC(int x){
+      public int BD(int x){
         x=x+1;
         x=x+2;
         x=x+3;
