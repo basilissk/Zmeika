@@ -42,7 +42,7 @@ public class A{
         y=x;
         return y;
     }
-      public int 2(int x){
+      public int B(int x){
         x=x+1;
         x=x+2;
         x=x+3;
